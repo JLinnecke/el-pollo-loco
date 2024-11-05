@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en" translate="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El pollo loco</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="shortcut icon" href="img/6_salsa_bottle/2_salsa_bottle_on_ground.png" type="image/x-icon">
+
+    <script src="models/drawable-object.class.js"></script>
+    <script src="models/movable-object.class.js"></script>
+    <script src="models/character.class.js"></script>
+    <script src="models/chicken.class.js"></script>
+    <script src="models/small-chicken.class.js"></script>
+    <script src="models/clouds.class.js"></script>
+    <script src="models/health-bar.class.js"></script>
+    <script src="models/coin-bar.class.js"></script>
+    <script src="models/bottle-bar.class.js"></script>
+    <script src="models/world.class.js"></script>
+    <script src="models/background-object.class.js"></script>
+    <script src="models/keyboard.class.js"></script>
+    <script src="models/level.class.js"></script>
+    <script src="models/boss.class.js"></script>
+    <script src="models/coins.class.js"></script>
+    <script src="models/bottle.class.js"></script>
+    <script src="models/throwable-object.class.js"></script>
+    <script src="models/game-over.class.js"></script>
+    <script src="models/win.class.js"></script>
+    <script src="levels/level1.js"></script>
+    
+    <script src="js/game.js"></script>
+    <script src="js/audio.js"></script>
+</head>
+<body onload="hideMuteAndFullscreenButton()">
+    <div class="headline" id="headline">
+        <h1 data-text="El Pollo Loco">El Pollo Loco</h1> 
+    </div>
+
+
+    <div class="portrait-warning">
+        Bitte drehen Sie Ihr Gerät ins Querformat, um das Spiel zu spielen.
+    </div>
+
+    
+
+
+    <div class="menu" id="menu">
+        <div class="start-game" onclick="startGame()">
+            <img src="img/6_salsa_bottle/salsa_bottle.png" class="menu-img" alt="start game"><span class="menu-text">Start Game</span>
+        </div>
+        <div class="introduction" onclick="showIntroductions()">
+            <img src="img/8_coin/coin_2.png" class="menu-img" alt="introduction"><span class="menu-text">Introduction</span>
+        </div>
+    </div>
+
+    
+
+
+    <div class="introductions" id="introductions">
+        <button class="fas back-btn" onclick="goBack()">&#xf3e5</button>
+        <span class="movement-description">Arrow left = Run left</span>
+        <span class="movement-description">Arrow right = Run right</span>
+        <span class="movement-description">SPACE = JUMP</span>
+        <span class="movement-description">D = Throw bottle</span><br>
+        <div class="introduction-text-content">
+            <span>You are Pepe, woke up in a desert. In the blazing heat of the sun, you fight your way through a horde of chickens armed only with your boots and a few salsa bottles until you get to the Giga Chicken. Good luck hombre you will need it!</span>
+        </div>
+    </div>
+
+
+    <div class="canvas-content" id="fullscreen">
+        <div class="audio">
+            <button class="fas play-pause-btn" id="audioPlay" onclick="playAudioMenu()">&#xf04b</button>
+            <button class="fas play-pause-btn" id="audioPause" onclick="pauseAudioMenu()" style="display: none;">&#xf04c</button>
+            <button class="fas mute-btn" id="muteButton" onclick="muteAudio()">&#xf6a9</button>
+            <button class="fas mute-btn" id="unmuteButton" onclick="unMuteAudio()" style="display: none;">&#xf028</button>
+            <div class="fullscreen">
+                <button class="fas fullscreen-btn" id="enterFullscreenButton" onclick="fullscreen()">&#xf065</button>
+                <button class="fas back-fullscreen-btn" id="exitFullscreenButton" onclick="removeFullscreen()">&#xf066</button>
+            </div>
+        </div>
+        <canvas id="canvas" width="720" height="480" style="display: none;">
+        </canvas>
+        <div class="after-game">
+            <button class="restart-btn" id="restartButton" onclick="startGame()">Restart</button>
+            <button class="go-back-btn" id="goBackButton" onclick="goBackHome()">Go Back</button>
+        </div>
+        <div class="mobile-buttons" id="mobileControls" style="display: none;">
+            <div class="move-buttons">
+                <button class="fas btn" id="buttonLeft">&#xf137</button>
+                <button class="fas btn" id="buttonRight">&#xf138</button>
+            </div>
+            <div class="action-buttons">
+                <button class="fas btn" id="buttonJump">&#xf139</button>
+                <button class="fas btn" id="buttonThrow">&#xf01e</button>
+            </div>
+        </div>
+    </div>
+    
+
+
+    
+    
+    <!--<div class="after-game">
+        <button class="restart-btn" id="restartButton" onclick="startGame()">Restart</button>
+        <button class="go-back-btn" id="goBackButton" onclick="goBackHome()">Go Back</button>
+    </div>-->
+<footer>
+    <div class="footer" id="footer">
+        <div class="links">
+            <a href="privacy.html">Datenschutz</a>
+            <a href="imprint.html">Impressum</a>
+            <a href="mention.html">Erwaehnung</a>
+        </div>
+        <span data-text="© 2021 El Pollo Loco">© 2024 El Pollo Loco</span>
+    </div>
+</footer>
+</body>
+</html>
